@@ -7,14 +7,16 @@
 ########
 #http://getcomposer.org/
 
-echo 'make sure you have added the path /usr/bin/composer to the open_basedir path in php.ini'
+echo 'make sure you have added the path /usr/bin/local/composer/ to the open_basedir path in php.ini'
 echo 'make sure you have enabled extnsion phar.so in php.ini'
 
 #install
-echo 'creating directory /usr/bin/composer'
-sudo mkdir /usr/bin/composer
-sudo cd /usr/bin/composer
+echo 'creating directory /usr/local/bin/composer'
+sudo mkdir /usr/local/bin/composer
+cd /usr/local/bin/composer
 echo 'downloading and installing composer'
-curl -s https://getcomposer.org/installer | php
+sudo curl -s https://getcomposer.org/installer | php
 sudo chmod +x composer.phar
+cd /usr/bin
+sudo ln -s /usr/local/bin/composer/composer.phar composer
 echo 'done'
