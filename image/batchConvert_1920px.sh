@@ -6,6 +6,6 @@
 # @since 2012-07-29
 ####
 mkdir resized_1920px
-for f in *.jpg
+for f in *.[jJ][pP][gG]
 do convert $f -verbose -geometry 1920x1920 -quality 98% -comment "proud made with linux" resized_1920px/$f
 done

@@ -5,8 +5,8 @@ m#####
 # @author stev leibelt
 # @since 2012-07-29
 ####
-kdir resized_50
-for f in *.jpg
+mkdir resized_50
+for f in *.[jJ][pP][gG]
 do convert $f -verbose -resize 50% -quality 98% -comment "proud made with linux" resized_50/$f
 #do convert $f -verbose -resize 25% -quality 90% -comment "proud made with linux" resized/$f
 #do convert $f -verbose -resize 6% -quality 90% -comment "proud made with linux" resized/thumb_$f

@@ -6,6 +6,6 @@
 # @since 2012-07-29
 ####
 mkdir resized_512px
-for f in *.jpg
+for f in *.[jJ][pP][gG]
 do convert $f -verbose -geometry 512x512 -quality 98% -comment "proud made with linux" resized_512px/$f
 done
