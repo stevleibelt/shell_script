@@ -23,17 +23,17 @@ if [[ $# -eq 3 ]]; then
   #output the differences
   diff $XML_FILE_ONE'.sort' $XML_FILE_TWO'.sort' > 'xml_diff_by_tag.diff'
   #diff --side-by-side $XML_FILE_ONE'.sort' $XML_FILE_TWO'.sort' > 'xml_diff_by_tag.diff'
-  comm -3 $XML_FILE_ONE'.sort' $XML_FILE_TWO'.sort' > 'xml_diff_by_tag.comm'
+  #comm -3 $XML_FILE_ONE'.sort' $XML_FILE_TWO'.sort' > 'xml_diff_by_tag.comm'
 
   #show only differences per file
   sed -n -e 's/^<\ \(.*\)/\1/p' 'xml_diff_by_tag.diff' > $XML_FILE_ONE'.diff.uniq'
   sed -n -e 's/^>\ \(.*\)/\1/p' 'xml_diff_by_tag.diff' > $XML_FILE_TWO'.diff.uniq'
 
-  sed -n -e 's/^<\(.*\)/<\1/p' 'xml_diff_by_tag.comm' > $XML_FILE_ONE'.comm.uniq'
-  sed -n -e 's/\t<\(.*\)/<\1/p' 'xml_diff_by_tag.comm' > $XML_FILE_TWO'.comm.uniq'
+  #sed -n -e 's/^<\(.*\)/<\1/p' 'xml_diff_by_tag.comm' > $XML_FILE_ONE'.comm.uniq'
+  #sed -n -e 's/\t<\(.*\)/<\1/p' 'xml_diff_by_tag.comm' > $XML_FILE_TWO'.comm.uniq'
 
   #removing unused files
-  #rm -fr $XML_FILE_ONE'.sed' $XML_FILE_TWO'.sed' $XML_FILE_ONE'.sort' $XML_FILE_TWO'.sort'
+  rm -fr $XML_FILE_ONE'.sed' $XML_FILE_TWO'.sed' $XML_FILE_ONE'.sort' $XML_FILE_TWO'.sort'
 else
   echo 'Invalid number of arguments provided'
   echo 'try '$0' $xmlFileOne $xmlFileTwo $comparingTag'
