@@ -13,7 +13,7 @@ if [[ $# -eq 3 ]]; then
 
   if [[ -f "$XML_FILE_ONE" 
         && -f "$XML_FILE_TWO" 
-        && ! -z "$XML_TAG ]]; then
+        && ! -z "$XML_TAG" ]]; then
     #retrieving xml_tags per file
     #reduce xmls by lines containing the tag
     sed -n -e 's/.*<'$XML_TAG'>\(.*\)<\/'$XML_TAG'>.*/\1/p' $XML_FILE_ONE > $XML_FILE_ONE'.sed'
