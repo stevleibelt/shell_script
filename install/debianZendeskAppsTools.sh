@@ -11,4 +11,5 @@ sudo apt-get install ruby1.8-dev libzlib-ruby libyaml-ruby rubygems
 sudo gem install rubygems-update
 sudo gem install zendesk_apps_tools
 sudo echo "PATH=/var/lib/gems/1.8/bin:$PATH" > /etc/profile.d/rubygems1.8.sh 
+echo "export GEM_HOME=/var/lib/gems/1.8" >> ~/.profile
 sudo ln -s /var/lib/gems/1.8/gems/zendesk_apps_tools-1.0.1/bin/zat /usr/bin/zat
