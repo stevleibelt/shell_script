@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 ####
 #
 ####
@@ -8,7 +8,7 @@
 
 URL_FEED='https://raw.github.com/propelorm/Propel/master/CHANGELOG'
 DIR_SELF=$(cd $(dirname "$0"); pwd);
-FILE_TO_DIFF='CHANGELOG_TO_DIFF'
+FILE_TO_DIFF='.PROPEL_RELEASE_CHANGELOG_TO_DIFF'
 
 $(wget -q $URL_FEED)
 
