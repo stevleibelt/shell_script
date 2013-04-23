@@ -14,7 +14,8 @@ $(wget -q $URL_FEED)
 
 if [ -f "$FILE_TO_DIFF" ]; then
     $(diff CHANGELOG $FILE_TO_DIFF)
-    $(rm CHANGELOG)
+    $(rm $FILE_TO_DIFF)
+    $(mv CHANGELOG $FILE_TO_DIFF)
 else
     echo First run, no file exists so far.
     $(mv CHANGELOG $FILE_TO_DIFF)
